@@ -1,5 +1,5 @@
 {
-  "name": "suri-rali",
+  "name": "susi-rali",
   "version": "0.0.0",
   "description": "super simple rate limiter nodejs",
   "main": "./lib/SusiRali.js",
@@ -26,7 +26,7 @@
     "ratelimiter"
   ],
   "copyright": {
-    "title": "suri-rali",
+    "title": "susi-rali",
     "years": [
       2021
     ],
