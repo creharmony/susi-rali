@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# IntelliJ
+*.iml
+
+package-lock.json
+
+# drafts
+__*/
+*.dontpush.*
