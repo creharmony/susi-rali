@@ -1,0 +1,46 @@
+{
+  "name": "suri-rali",
+  "version": "0.0.0",
+  "description": "super simple rate limiter nodejs",
+  "main": "./lib/SusiRali.js",
+  "scripts": {
+    "test": "mocha --timeout 120000 tests/*.test.js",
+    "cover": "nyc --reporter text --reporter cobertura --reporter html --reporter=lcov --lines 66 mocha --timeout 120000  --exit --unhandled-rejections=strict tests/*.test.js",
+    "ci-test": "echo linux ci-test&& nyc --reporter text --reporter cobertura --reporter html --reporter=lcov --lines 66 mocha --timeout 120000  --exit --unhandled-rejections=strict tests/*.test.js"
+  },
+  "private": false,
+  "author": "Boly38 <boly380@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/creharmony/suri-rali.git"
+  },
+  "bugs": {
+    "url": "https://github.com/creharmony/suri-rali/issues"
+  },
+  "keywords": [
+    "node",
+    "rate",
+    "limit",
+    "javascript",
+    "ratelimiter"
+  ],
+  "copyright": {
+    "title": "suri-rali",
+    "years": [
+      2021
+    ],
+    "author": "Brice Vandeputte"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "engines": {
+    "node": "12"
+  }
+}
