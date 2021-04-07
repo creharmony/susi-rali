@@ -46,6 +46,7 @@ or else apply default value.
 
 - `windowsMs`         : Rate limit windows size in milliseconds - *optional* with default value: `1000`
 - `maxQueryPerWindow` : Rate limit max query per windows size - *optional* with default value: `10`
+- `maxProcessingPerWindow` : Rate limit max query processing per windows size - *optional* with default value: `maxQueryPerWindow`
 
 ## How to contribute
 You're not a dev ? just submit an issue (bug, improvements, questions). Or else:
