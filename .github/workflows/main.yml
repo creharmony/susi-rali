@@ -60,6 +60,8 @@ jobs:
       with:
         audit_level: moderate
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        issue_assignees: creharmony
+        issue_labels: vulnerability,bot
         dedupe_issues: true
 
     - name: Publish NpmJS package
