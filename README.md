@@ -59,6 +59,8 @@ cd susi-rali
 npm install
 # play tests
 npm run test
+# play different parallel configurations
+npm run manual
 ```
 * you could also fork, feature branch, then submit a pull request.
 
