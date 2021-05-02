@@ -128,7 +128,7 @@ describe("Test SusiRali", function() {
     maxP = 0;
 
     const susi = new SusiRali({windowsMs, maxQueryPerWindow, maxProcessingPerWindow, debugEnabled});
-    var duration = await testParallelPromise(nbEntries, counterWindows, nbEntries);
+    var duration = await testParallelPromise(nbEntries, counterWindows);
 
     expect(maxQ).to.be.lte(maxQueryPerWindow);
     expect(maxP).to.be.lte(maxProcessingPerWindow);
