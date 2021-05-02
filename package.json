@@ -1,6 +1,6 @@
 {
   "name": "susi-rali",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "super simple rate limiter nodejs",
   "main": "./lib/SusiRali.js",
   "scripts": {
