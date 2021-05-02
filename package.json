@@ -4,6 +4,7 @@
   "description": "super simple rate limiter nodejs",
   "main": "./lib/SusiRali.js",
   "scripts": {
+    "manual": "mocha --timeout 120000 tests/manual/*.test.js",
     "test": "mocha --timeout 120000 tests/*.test.js",
     "cover": "nyc --reporter text --reporter cobertura --reporter html --reporter=lcov --lines 66 mocha --timeout 120000  --exit --unhandled-rejections=strict tests/*.test.js",
     "ci-test": "echo linux ci-test&& nyc --reporter text --reporter cobertura --reporter html --reporter=lcov --lines 66 mocha --timeout 120000  --exit --unhandled-rejections=strict tests/*.test.js"
