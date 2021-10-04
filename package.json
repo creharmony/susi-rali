@@ -1,6 +1,6 @@
 {
   "name": "susi-rali",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "super simple rate limiter nodejs",
   "main": "./lib/SusiRali.js",
   "scripts": {
@@ -33,8 +33,7 @@
     ],
     "author": "Brice Vandeputte"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^9.1.2",
