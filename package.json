@@ -10,7 +10,7 @@
     "ci-test": "echo linux ci-test&& nyc --reporter text --reporter cobertura --reporter html --reporter=lcov --lines 66 mocha --timeout 120000  --exit --unhandled-rejections=strict tests/*.test.js"
   },
   "private": false,
-  "author": "Boly38 <boly380@gmail.com>",
+  "author": "Boly38 <boly38@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
