@@ -5,7 +5,7 @@
   "main": "./lib/SusiRali.js",
   "type": "module",
   "scripts": {
-    "preinstall": "npm-force-resolutions",
+    "preinstall": "npx force-resolutions",
     "manual": "mocha --timeout 120000 tests/manual/*.test.js",
     "test": "mocha --timeout 120000 tests/*.test.js",
     "testS": "mocha --timeout 120000 tests/susi-rali.test.js",
