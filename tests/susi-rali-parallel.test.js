@@ -1,7 +1,13 @@
-const assert = require('assert').strict;
-const expect = require('chai').expect
-const SusiRali = require('../lib/SusiRali.js');
-const TestHelper = require('./TestHelper')();
+import SusiRali from '../lib/SusiRali.js';
+import TestHelperJs from './TestHelper.js';
+import { strict as assert } from 'assert';
+import chai from 'chai';
+const should = chai.should;
+const expect = chai.expect;
+should();
+
+const testHelper = new TestHelperJs();
+
 const debugEnabled=true;
 const warnEnabled=true;
 
@@ -11,7 +17,7 @@ describe("Test SusiRali parallel", function() {
 
     async function testParallelPromise(batchCount, counterWindows) {
       const start = new Date();
-      await TestHelper.countEachWindow(start, counterWindows, batchCount, susi);
+      await testHelper.countEachWindow(start, counterWindows, batchCount, susi);
 
       console.log(`PARALLEL LAUNCH`)
 
@@ -19,13 +25,13 @@ describe("Test SusiRali parallel", function() {
       for (var k=0;k<batchCount;k++) {
         const businessArg = `parallel${k}`;
         promises.push(
-         susi.limitedCall(()=>TestHelper.businessCode(businessArg, 200)).then((result)=>console.log(">" + result))
+         susi.limitedCall(()=>testHelper.businessCode(businessArg, 200)).then((result)=>console.log(">" + result))
         );
       }
-      await Promise.allSettled(promises).catch(TestHelper._expectNoError);
+      await Promise.allSettled(promises).catch(testHelper._expectNoError);
 
       const duration = new Date() - start;
-      console.log(`parallel duration: ${duration}ms ${TestHelper.nbDone} / ${TestHelper.nbDoneAll}`);
+      console.log(`parallel duration: ${duration}ms ${testHelper.nbDone} / ${testHelper.nbDoneAll}`);
 
       return duration;
     }
@@ -36,14 +42,14 @@ describe("Test SusiRali parallel", function() {
     const maxProcessingPerWindow=9;
     const nbEntries = 100;
 
-    TestHelper.reset();
+    testHelper.reset();
 
     const susi = new SusiRali({windowsMs, maxQueryPerWindow, maxProcessingPerWindow, debugEnabled, warnEnabled});
     var duration = await testParallelPromise(nbEntries, counterWindows);
 
-    expect(TestHelper.maxQ).to.be.lte(maxQueryPerWindow);
-    expect(TestHelper.maxP).to.be.lte(maxProcessingPerWindow);
-    await TestHelper.sleep(counterWindows*4);// end of counter must be reached to start next
+    expect(testHelper.maxQ).to.be.lte(maxQueryPerWindow);
+    expect(testHelper.maxP).to.be.lte(maxProcessingPerWindow);
+    await testHelper.sleep(counterWindows*4);// end of counter must be reached to start next
   });
 
 
@@ -51,7 +57,7 @@ describe("Test SusiRali parallel", function() {
 
     async function testParallelPromise(batchCount, counterWindows) {
       const start = new Date();
-      await TestHelper.countEachWindow(start, counterWindows, batchCount, susi);
+      await testHelper.countEachWindow(start, counterWindows, batchCount, susi);
 
       console.log(`PARALLEL LAUNCH`)
 
@@ -59,13 +65,13 @@ describe("Test SusiRali parallel", function() {
       for (var k=0;k<batchCount;k++) {
         const businessArg = `parallel${k}`;
         promises.push(
-         susi.limitedCall(()=>TestHelper.businessCode(businessArg, 200)).then((result)=>console.log(">" + result))
+         susi.limitedCall(()=>testHelper.businessCode(businessArg, 200)).then((result)=>console.log(">" + result))
         );
       }
-      await Promise.allSettled(promises).catch(TestHelper._expectNoError);
+      await Promise.allSettled(promises).catch(testHelper._expectNoError);
 
       const duration = new Date() - start;
-      console.log(`parallel duration: ${duration}ms ${TestHelper.nbDone} / ${TestHelper.nbDoneAll}`);
+      console.log(`parallel duration: ${duration}ms ${testHelper.nbDone} / ${testHelper.nbDoneAll}`);
 
       return duration;
     }
@@ -76,14 +82,14 @@ describe("Test SusiRali parallel", function() {
     const maxProcessingPerWindow=10;
     const nbEntries = 20;
 
-    TestHelper.reset();
+    testHelper.reset();
 
     const susi = new SusiRali({windowsMs, maxQueryPerWindow, maxProcessingPerWindow, debugEnabled, warnEnabled});
     var duration = await testParallelPromise(nbEntries, counterWindows);
 
-    expect(TestHelper.maxQ).to.be.lte(maxQueryPerWindow);
-    expect(TestHelper.maxP).to.be.lte(maxProcessingPerWindow);
-    await TestHelper.sleep(counterWindows*4);// end of counter must be reached to start next
+    expect(testHelper.maxQ).to.be.lte(maxQueryPerWindow);
+    expect(testHelper.maxP).to.be.lte(maxProcessingPerWindow);
+    await testHelper.sleep(counterWindows*4);// end of counter must be reached to start next
   });
 
 });

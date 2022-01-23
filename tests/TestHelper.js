@@ -49,6 +49,4 @@ class TestHelper {
   }
 }
 
-makeHelper = function() { return new TestHelper(); }
-
-module.exports = makeHelper;
+export default TestHelper;
