@@ -1,6 +1,6 @@
 {
   "name": "susi-rali",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "super simple rate limiter nodejs",
   "main": "./lib/SusiRali.js",
   "type": "module",
@@ -16,10 +16,28 @@
   "private": false,
   "author": "Boly38 <boly38@gmail.com>",
   "license": "MIT",
-  "repository": {"type": "git", "url": "https://github.com/creharmony/susi-rali.git"},
-  "bugs": { "url": "https://github.com/creharmony/susi-rali/issues"},
-  "keywords": ["node", "rate", "limit", "javascript", "ratelimiter"],
-  "copyright": { "title": "susi-rali", "years": [2021, 2022], "author": "Brice Vandeputte"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/creharmony/susi-rali.git"
+  },
+  "bugs": {
+    "url": "https://github.com/creharmony/susi-rali/issues"
+  },
+  "keywords": [
+    "node",
+    "rate",
+    "limit",
+    "javascript",
+    "ratelimiter"
+  ],
+  "copyright": {
+    "title": "susi-rali",
+    "years": [
+      2021,
+      2022
+    ],
+    "author": "Brice Vandeputte"
+  },
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.3.4",
