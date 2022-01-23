@@ -1,7 +1,12 @@
-const assert = require('assert').strict;
-const expect = require('chai').expect
-const SusiRali = require('../lib/SusiRali.js');
-const TestHelper = require('./TestHelper')();
+import SusiRali from '../lib/SusiRali.js';
+import TestHelperJs from './TestHelper.js';
+import { strict as assert } from 'assert';
+import chai from 'chai';
+const should = chai.should;
+const expect = chai.expect;
+should();
+
+const testHelper = new TestHelperJs();
 
 describe("Test SusiRali pause and restart", function() {
 
@@ -9,20 +14,20 @@ describe("Test SusiRali pause and restart", function() {
 
     async function testPromise(batchCount, sleepTimeMs, counterWindows) {
       const start = new Date();
-      await TestHelper.countEachWindow(start, counterWindows, batchCount*2, susi);
+      await testHelper.countEachWindow(start, counterWindows, batchCount*2, susi);
 
       console.log(`FIRST LAUNCH`)
       for (var i=0;i<batchCount;i++) {
-           await susi.limitedCall(() => TestHelper.businessCode("First"+i,0))
+           await susi.limitedCall(() => testHelper.businessCode("First"+i,0))
                      .then((result)=>console.log(">" + result));
       }
       var duration = new Date() - start;
-      console.log(`DD duration: ${duration}ms ${TestHelper.nbDone} / ${TestHelper.nbDoneAll}`);
-      await TestHelper.sleep(sleepTimeMs);
+      console.log(`DD duration: ${duration}ms ${testHelper.nbDone} / ${testHelper.nbDoneAll}`);
+      await testHelper.sleep(sleepTimeMs);
 
       console.log(`SECOND LAUNCH`)
       for (var j=0;j<batchCount;j++) {
-           await susi.limitedCall(() => TestHelper.businessCode("Second"+j,0))
+           await susi.limitedCall(() => testHelper.businessCode("Second"+j,0))
                      .then((result)=>console.log(">" + result));
       }
       var duration = new Date() - start;
@@ -38,15 +43,15 @@ describe("Test SusiRali pause and restart", function() {
     const nbEntries = 50;
     const sleepTimeMs = 2000;
 
-    TestHelper.reset();
+    testHelper.reset();
 
     const susi = new SusiRali({windowsMs, maxQueryPerWindow, debugEnabled});
     var duration = await testPromise(nbEntries, sleepTimeMs, counterWindows);
 
-    expect(TestHelper.maxQ).to.be.lt(maxQueryPerWindow);
-    expect(TestHelper.maxP).to.be.lt(maxQueryPerWindow);
+    expect(testHelper.maxQ).to.be.lt(maxQueryPerWindow);
+    expect(testHelper.maxP).to.be.lt(maxQueryPerWindow);
 
-    await TestHelper.sleep(counterWindows*4);// end of counter must be reached to start next
+    await testHelper.sleep(counterWindows*4);// end of counter must be reached to start next
   });
 
 
