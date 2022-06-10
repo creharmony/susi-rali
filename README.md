@@ -1,5 +1,4 @@
 # susi-rali
-
 [![NPM](https://nodei.co/npm/susi-rali.png?compact=true)](https://npmjs.org/package/susi-rali)
 
 NodeJs Super Simple Rate Limiter : [susi-rali](https://npmjs.org/package/susi-rali).
@@ -70,7 +69,7 @@ npm run manual
 |--------|-------|:--------|
 | ![CI/CD](https://github.com/creharmony/susi-rali/workflows/susi_rali_ci/badge.svg) |Github actions|Continuous tests.
 | [![Audit](https://github.com/creharmony/susi-rali/actions/workflows/audit.yml/badge.svg)](https://github.com/creharmony/susi-rali/actions/workflows/audit.yml) |Github actions|Continuous vulnerability audit.
-|  |[Houndci](https://houndci.com/)|JavaScript  automated review (configured by `.hound.yml`)|
+|[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)|[Houndci](https://houndci.com/)|JavaScript  automated review (configured by `.hound.yml`)|
 |[![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)| GREN |Automated Release Notes by gren|
 <!-- 
 | [![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)|[gren](https://github.com/github-tools/github-release-notes)|[Release notes](https://github.com/creharmony/susi-rali/releases) automation|
