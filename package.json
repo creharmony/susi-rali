@@ -45,8 +45,8 @@
     "nyc": "^15.1.0"
   },
   "resolutions": {
-    "nanoid": "^3.2.0",
-    "minimist": "^1.2.6"
+    "nanoid": "3.2.0",
+    "minimist": "1.2.6"
   },
   "jshintConfig": {
     "esversion": 6
